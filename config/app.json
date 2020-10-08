@@ -1,0 +1,7 @@
+{
+    "db": {
+        "user": "becarios",
+        "password": "becarios"
+    },
+    "log": "./var/log/formacion.log"
+}

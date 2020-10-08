@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% block css %}{% endblock %} {% block js %}{% endblock %}
+</head>
+
+<body>
+    <div style="border: solid 1px">
+        <h2>Practica MF0493</h2>
+        <hr>
+        <h3>{% block page_title %}{% endblock %}</h3>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

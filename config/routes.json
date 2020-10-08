@@ -1,0 +1,26 @@
+{
+    "": {
+        "controller": "Becario",
+        "method": "initBecario"
+    },
+    "add": {
+        "controller": "Becario",
+        "method": "addBecario"
+    },
+    "becarios-mod": {
+        "controller": "Becario",
+        "method": "modBecarios"
+    },
+    "becarios-mod/modify": {
+        "controller": "Becario",
+        "method": "modifyBecarios"
+    },
+    "becarios-del": {
+        "controller": "Becario",
+        "method": "delBecarios"
+    },
+    "becarios-del/delete": {
+        "controller": "Becario",
+        "method": "deleteBecarios"
+    }
+}

@@ -1,0 +1,69 @@
+{% extends 'layout.twig' %} {% block title %} Becarios {% endblock %} {% block css %}
+<link rel="stylesheet" href="../views/css/deleteBecario.css" />{% endblock %} {% block js %}
+<script type="text/javascript" src="./views/js/modifyBecario.js"></script>{% endblock %} {% block page_title %}Modificar un becario{% endblock %} {% block content %}
+<div class="container">
+    <form action="/becarios-mod/modify" method="post">
+        <table id="becarios">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Nacionalidad</th>
+                    <th>Tipo de formación</th>
+                    <th>Formador-Sala-Fecha inicio-Fin</th>
+                    <th>Modificar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for becario in becarios %}
+                <tr>
+                    <td><input type="text" name="firstname-{{becario.id}}" value={{ becario.nombre }}></td>
+                    <td><input type="text" name="lastname-{{becario.id}}" value={{ becario.apellidos }} maxlength="50"></td>
+                    <td>
+                        <select id="country" name="country-{{becario.id}}">
+                            <option value={{becario.nacionalidad_id}}>{{becario.nacionalidad}}</option>
+                            {% for nacionalidad in nacionalidades %}
+                            {% if becario.nacionalidad_id != nacionalidad.id %}
+                                <option value={{nacionalidad.id}}>{{nacionalidad.etiqueta}}</option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td>
+                        <select id="formation" class="formation" name="formation-{{becario.id}}">
+                            <option value={{becario.formacion_id}}>{{becario.formacion}}</option>
+                            {% for formacion in formaciones %}
+                            {% if becario.formacion_id != formacion.id %}
+                            <option value={{formacion.id}}>{{formacion.etiqueta}}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <p><input type="radio" name="formador-{{becario.id}}" value="{{becario.formador_id}}" checked="checked"/>{{becario.nombre_formador}} - {{becario.sala}} , <span class="fechas" id="{{becario.id}}"></span></p>
+                        {% for formador in formadores %}
+                        {% if becario.formador_id != formador.id %}
+                        <p><input type="radio" name="formador-{{becario.id}}" value="{{formador.id}}" />{{formador.nombre}} - {{formador.sala}} , <span class="fechas" id="{{becario.id}}"></span></p>
+                        {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <input type="checkbox" name="check_list[]" value="{{ becario.id }}" />
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-25">
+            <a href="/">Añadir un becario</a>
+        </div>
+        <div class="col-25">
+            <a href="/becarios-del">Eliminar un becario</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

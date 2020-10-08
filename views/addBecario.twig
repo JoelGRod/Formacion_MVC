@@ -1,0 +1,68 @@
+{% extends 'layout.twig' %} {% block title %} Becarios {% endblock %} {% block css %}
+<link rel="stylesheet" href="./views/css/addBecario.css" />{% endblock %} {% block js %}
+<script type="text/javascript" src="./views/js/addBecario.js"></script>{% endblock %} {% block page_title %}Insertar un becario en formación{% endblock %} {% block content %}
+<div class="container">
+    <form action="/add" method="POST">
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">Nombre</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Apellidos</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="country">Nacionalidad</label>
+            </div>
+            <div class="col-75">
+                <select id="country" name="country">
+                {% for nacionalidad in nacionalidades %}
+                    <option value={{nacionalidad.id}}>{{nacionalidad.etiqueta}}</option>
+                {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="formation">Tipo de formación</label>
+            </div>
+            <div class="col-75">
+                <select id="formation" name="formation">
+                    {% for formacion in formaciones %}
+                    <option value={{formacion.id}}>{{formacion.etiqueta}}</option>
+                {% endfor %}
+        </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <p>Formadores por fecha:</p>
+            </div>
+            <div class="col-75">
+                {% for formador in formadores %}
+                <p><input type="radio" name="formador" value="{{formador.id}}" />{{formador.nombre}} {{formador.apellidos}} en sala {{formador.sala}} , <span class="fechas"></span></p>{% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-25">
+            <a href="/becarios-del">Eliminar un becario</a>
+        </div>
+        <div class="col-25">
+            <a href="/becarios-mod">Modificar un becario</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

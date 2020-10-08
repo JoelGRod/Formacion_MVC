@@ -1,0 +1,47 @@
+{% extends 'layout.twig' %} {% block title %} Becarios {% endblock %} {% block css %}
+<link rel="stylesheet" href="../views/css/deleteBecario.css" />{% endblock %} {% block js %} {% endblock %} {% block page_title %}Eliminar datos de un becario{% endblock %} {% block content %}
+<div class="container">
+    <form action="/becarios-del/delete" method="post">
+        <table id="becarios">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Nacionalidad</th>
+                    <th>Tipo de formación</th>
+                    <th>Formador-Sala-Fecha inicio-Fin</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for becario in becarios %}
+                <tr>
+                    <td>{{ becario.nombre }}</td>
+                    <td>{{ becario.apellidos }}</td>
+                    <td>{{ becario.nacionalidad }}</td>
+                    <td>{{ becario.formacion }}</td>
+                    <td>
+                        {{ becario.nombre_formador }} - {{ becario.sala }} - {{ becario.inicio }} {{ becario.fin }}
+                    </td>
+                    <td>
+                        <input type="checkbox" name="check_list[]" value="{{ becario.id }}" />
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row">
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-25">
+            <a href="/">Añadir un becario</a>
+        </div>
+        <div class="col-25">
+            <a href="/becarios-mod">Modificar un becario</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
