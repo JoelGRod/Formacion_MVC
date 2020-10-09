@@ -1,9 +1,9 @@
 ## Initial Configuration Steps:
 - Install vagrant: 
-        - https://www.vagrantup.com/downloads
+  - https://www.vagrantup.com/downloads
 - Clone project
 - Inside project run: (VagrantFile and provisioner.sh included)
-        - vagrant up 
+  - vagrant up 
 - Connect via SSH to your new VM: 
         - vagrant ssh
 - Connect to mysql: user: root password: root 
