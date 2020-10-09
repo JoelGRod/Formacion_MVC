@@ -18,4 +18,3 @@
 - Give all privileges to /vagrant/var/log/formacion.log (not secure but fast solution) -> This is for logger to work
         - sudo chmod 777 formacion.log
 - In browser connect to: localhost:8080/
-- END
