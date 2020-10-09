@@ -99,7 +99,7 @@ class BecarioController extends AbstractController
             return $this->render('error.twig', $params);
         }
         
-        return $this->modBecarios();
+        return $this->delBecarios();
     }
 
     public function delBecarios(): string
