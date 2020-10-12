@@ -1,4 +1,5 @@
 ## Initial Configuration Steps:
+# Option 1: Vagrant
 - Install vagrant: 
   - https://www.vagrantup.com/downloads
 - Clone project
