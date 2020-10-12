@@ -29,4 +29,4 @@
     <VirtualHost formacion.test:80>
     DocumentRoot "E:/xampp/htdocs/formacion/"
     </VirtualHost>
-- LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and set AllowOverride All
+- LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and AllowOverride All must be setted
