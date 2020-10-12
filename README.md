@@ -1,5 +1,5 @@
-## Initial Configuration Steps:
-# Option 1: Vagrant
+# Initial Configuration Steps:
+## Option 1: Vagrant
 - Install vagrant: 
   - https://www.vagrantup.com/downloads
 - Clone project
@@ -19,3 +19,8 @@
 - Give all privileges to /vagrant/var/log/formacion.log (not secure but fast solution) -> This is for logger to work
   - sudo chmod 777 formacion.log
 - In browser connect to: localhost:8080/
+## Option 2: XAMPP
+- Clone project inside htdocs
+- Modify your hosts file (/etc/hosts in linux and mac, C:/Windows/System32/drivers/etc/hosts in Windows 10)
+  - add line: 127.0.0.1 formacion.test
+- Add virtual host to XAMPP in 
