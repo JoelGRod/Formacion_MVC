@@ -32,4 +32,4 @@ https://github.com/JoelGRod/Formacion_MVC
     </VirtualHost>
 - LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and AllowOverride All must be setted
 - Create and import DB in mysql: /vagrant/var/formacion.sql -> db_name: formacion, user: becarios, password: becarios
-- Create user becarios in mysql for db 'formacion'
+- Create user becarios with privileges in db 'formacion'
