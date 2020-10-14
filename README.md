@@ -1,7 +1,10 @@
 ### Ejercicio para FOCAN formacion: Joel Glez Rod
 https://github.com/JoelGRod/Formacion_MVC
-# Initial Configuration Steps:
-## Option 1: Vagrant (Linux, MacOS and Windows)
+# Initial Configuration Steps
+# Step 1: Define the environment:
+## Option 1: Vagrant (Linux, MacOS and Windows)(Recommended)
+- Install VirtualBox:
+  - https://www.virtualbox.org/wiki/Downloads
 - Install vagrant: 
   - https://www.vagrantup.com/downloads
 - Clone project
@@ -9,6 +12,17 @@ https://github.com/JoelGRod/Formacion_MVC
   - vagrant up 
 - Connect via SSH to your new VM: 
   - vagrant ssh
+## Option 2: XAMPP (Windows)
+- Clone project inside htdocs
+- Modify your hosts file (C:/Windows/System32/drivers/etc/hosts)
+  - add line: 127.0.0.1 formacion.test
+- Add virtual host to XAMPP in X:\xampp\apache\conf\extra\httpd-vhosts.conf
+  - add at the end of the file:
+    <VirtualHost formacion.test:80>
+    DocumentRoot "E:/xampp/htdocs/formacion/"
+    </VirtualHost>
+- LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and AllowOverride All must be setted
+# Step 2: Define Database:
 - Connect to mysql: user: root password: root 
   - mysql -u root -p
 - Create and import DB in mysql: /vagrant/var/formacion.sql -> db_name: formacion
@@ -21,15 +35,3 @@ https://github.com/JoelGRod/Formacion_MVC
 - Give all privileges to /vagrant/var/log/formacion.log (not secure but fast solution) -> This is for logger to work
   - sudo chmod 777 formacion.log
 - In browser connect to: localhost:8080/
-## Option 2: XAMPP (Windows)
-- Clone project inside htdocs
-- Modify your hosts file (C:/Windows/System32/drivers/etc/hosts)
-  - add line: 127.0.0.1 formacion.test
-- Add virtual host to XAMPP in X:\xampp\apache\conf\extra\httpd-vhosts.conf
-  - add at the end of the file:
-    <VirtualHost formacion.test:80>
-    DocumentRoot "E:/xampp/htdocs/formacion/"
-    </VirtualHost>
-- LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and AllowOverride All must be setted
-- Create and import DB in mysql: /vagrant/var/formacion.sql -> db_name: formacion, user: becarios, password: becarios
-- Create user becarios with privileges in db 'formacion'
