@@ -1,6 +1,6 @@
 ### Ejercicio para FOCAN formacion: Joel Glez Rod
 https://github.com/JoelGRod/Formacion_MVC
-# Initial Configuration Steps
+# Initial Local Configuration Steps 
 # Step 1: Define the environment
 ## Option 1: Vagrant (Linux, MacOS and Windows)(Recommended)
 - Install VirtualBox:
