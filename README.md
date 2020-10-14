@@ -1,7 +1,7 @@
 ### Ejercicio para FOCAN formacion: Joel Glez Rod
 https://github.com/JoelGRod/Formacion_MVC
 # Initial Configuration Steps
-# Step 1: Define the environment:
+# Step 1: Define the environment
 ## Option 1: Vagrant (Linux, MacOS and Windows)(Recommended)
 - Install VirtualBox:
   - https://www.virtualbox.org/wiki/Downloads
@@ -22,7 +22,7 @@ https://github.com/JoelGRod/Formacion_MVC
     DocumentRoot "E:/xampp/htdocs/formacion/"
     </VirtualHost>
 - LoadModule rewrite_module modules/mod_rewrite.so in X:\xampp\apache\conf\httpd.conf must be anabled and AllowOverride All must be setted
-# Step 2: Define Database:
+# Step 2: Define Database
 - Connect to mysql: user: root password: root 
   - mysql -u root -p
 - Create and import DB in mysql: /vagrant/var/formacion.sql -> db_name: formacion
